@@ -1,1 +1,217 @@
-
+{
+  "data": [
+    {
+      "time": "2021-04-14 19:44:18.152585",
+      "0": {
+        "nb_hotspot": 41,
+        "avg_month": 32.32246143536585,
+        "avg_day": 2.3544353829268294,
+        "median_month": 5.07874414,
+        "median_day": 0.13859002
+      },
+      "1": {
+        "nb_hotspot": 1,
+        "avg_month": 142.69923823,
+        "avg_day": 2.68551569,
+        "median_month": 142.69923823,
+        "median_day": 2.68551569
+      },
+      "2": {
+        "nb_hotspot": 13,
+        "avg_month": 114.00192160076924,
+        "avg_day": 2.941309370769231,
+        "median_month": 97.40769287,
+        "median_day": 2.6290795
+      },
+      "3": {
+        "nb_hotspot": 5,
+        "avg_month": 164.083971638,
+        "avg_day": 4.030100702,
+        "median_month": 185.29857697,
+        "median_day": 3.54517895
+      },
+      "4": {
+        "nb_hotspot": 2,
+        "avg_month": 100.835536945,
+        "avg_day": 2.4235208299999997,
+        "median_month": 100.835536945,
+        "median_day": 2.4235208299999997
+      },
+      "5": {
+        "nb_hotspot": 2,
+        "avg_month": 120.0490794,
+        "avg_day": 1.4380759749999998,
+        "median_month": 120.0490794,
+        "median_day": 1.4380759749999998
+      },
+      "6": {
+        "nb_hotspot": 2,
+        "avg_month": 79.47597066,
+        "avg_day": 4.22749347,
+        "median_month": 79.47597066,
+        "median_day": 4.22749347
+      },
+      "7": {
+        "nb_hotspot": 1,
+        "avg_month": 145.77009355,
+        "avg_day": 4.76204819,
+        "median_month": 145.77009355,
+        "median_day": 4.76204819
+      },
+      "8": {
+        "nb_hotspot": 3,
+        "avg_month": 144.94890934,
+        "avg_day": 3.5959771133333334,
+        "median_month": 165.57477002,
+        "median_day": 3.07112041
+      },
+      "9": {
+        "nb_hotspot": 1,
+        "avg_month": 261.3004179,
+        "avg_day": 9.6551572,
+        "median_month": 261.3004179,
+        "median_day": 9.6551572
+      },
+      "10": {
+        "nb_hotspot": 2,
+        "avg_month": 151.68436514,
+        "avg_day": 5.903685375,
+        "median_month": 151.68436514,
+        "median_day": 5.903685375
+      },
+      "11": {
+        "nb_hotspot": 3,
+        "avg_month": 204.18224302,
+        "avg_day": 4.634193353333333,
+        "median_month": 162.41672884,
+        "median_day": 3.42728345
+      },
+      "12": {
+        "nb_hotspot": 1,
+        "avg_month": 145.27062755,
+        "avg_day": 5.72454825,
+        "median_month": 145.27062755,
+        "median_day": 5.72454825
+      },
+      "13": {
+        "nb_hotspot": 3,
+        "avg_month": 209.16968747333334,
+        "avg_day": 5.66298338,
+        "median_month": 210.28462706,
+        "median_day": 4.66435777
+      },
+      "14": {
+        "nb_hotspot": 4,
+        "avg_month": 326.8384050525,
+        "avg_day": 9.121181175,
+        "median_month": 374.72490725,
+        "median_day": 10.440369715
+      },
+      "15": {
+        "nb_hotspot": 1,
+        "avg_month": 259.58206622,
+        "avg_day": 7.72058358,
+        "median_month": 259.58206622,
+        "median_day": 7.72058358
+      },
+      "17": {
+        "nb_hotspot": 1,
+        "avg_month": 498.30683007,
+        "avg_day": 13.09813196,
+        "median_month": 498.30683007,
+        "median_day": 13.09813196
+      },
+      "18": {
+        "nb_hotspot": 1,
+        "avg_month": 369.32847818,
+        "avg_day": 14.33137097,
+        "median_month": 369.32847818,
+        "median_day": 14.33137097
+      },
+      "19": {
+        "nb_hotspot": 1,
+        "avg_month": 270.6715464,
+        "avg_day": 4.86670886,
+        "median_month": 270.6715464,
+        "median_day": 4.86670886
+      },
+      "20": {
+        "nb_hotspot": 2,
+        "avg_month": 338.37405102,
+        "avg_day": 7.60859389,
+        "median_month": 338.37405102,
+        "median_day": 7.60859389
+      },
+      "21": {
+        "nb_hotspot": 3,
+        "avg_month": 299.59698669666665,
+        "avg_day": 13.264844173333334,
+        "median_month": 356.80004187,
+        "median_day": 12.59542524
+      },
+      "24": {
+        "nb_hotspot": 3,
+        "avg_month": 380.4788808833333,
+        "avg_day": 12.872599746666667,
+        "median_month": 425.30757842,
+        "median_day": 12.13700887
+      },
+      "25": {
+        "nb_hotspot": 1,
+        "avg_month": 453.35445195,
+        "avg_day": 10.32617937,
+        "median_month": 453.35445195,
+        "median_day": 10.32617937
+      },
+      "31": {
+        "nb_hotspot": 1,
+        "avg_month": 550.02297868,
+        "avg_day": 13.16964328,
+        "median_month": 550.02297868,
+        "median_day": 13.16964328
+      },
+      "32": {
+        "nb_hotspot": 1,
+        "avg_month": 904.42954212,
+        "avg_day": 22.91269268,
+        "median_month": 904.42954212,
+        "median_day": 22.91269268
+      },
+      "35": {
+        "nb_hotspot": 1,
+        "avg_month": 496.97121835,
+        "avg_day": 15.93298704,
+        "median_month": 496.97121835,
+        "median_day": 15.93298704
+      },
+      "36": {
+        "nb_hotspot": 2,
+        "avg_month": 754.32360006,
+        "avg_day": 19.381994485,
+        "median_month": 754.32360006,
+        "median_day": 19.381994485
+      },
+      "39": {
+        "nb_hotspot": 1,
+        "avg_month": 747.4354736,
+        "avg_day": 24.12584984,
+        "median_month": 747.4354736,
+        "median_day": 24.12584984
+      },
+      "42": {
+        "nb_hotspot": 1,
+        "avg_month": 544.66826525,
+        "avg_day": 35.38059669,
+        "median_month": 544.66826525,
+        "median_day": 35.38059669
+      },
+      "44": {
+        "nb_hotspot": 1,
+        "avg_month": 582.19512427,
+        "avg_day": 22.39245028,
+        "median_month": 582.19512427,
+        "median_day": 22.39245028
+      }
+    }
+  ]
+}
