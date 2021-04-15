@@ -2,8 +2,7 @@ name: fetch-hnt-rewards-data
 
 on:
   schedule:
-    - cron: '0 12 * * *'
-  push:
+    - cron: '0/10 12-17 * * *'
 
 jobs:
   fetch-data:
