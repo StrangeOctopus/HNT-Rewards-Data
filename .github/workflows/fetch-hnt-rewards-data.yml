@@ -3,6 +3,7 @@ name: fetch-hnt-rewards-data
 on:
   schedule:
     - cron: '0/10 12-17 * * *'
+  workflow_dispatch:
 
 jobs:
   fetch-data:
