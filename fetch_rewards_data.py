@@ -5,9 +5,7 @@ from datetime import datetime, date, timedelta
 oneDay = timedelta(days=1)
 oneMonth = timedelta(days=30)
 
-hotspotsNames_URL = 'https://api.sitebot.com/api/v1/helium/hotspot-list.json?key=101687ce89a25521643d34b2ee3bb71e&country=FR'
-
-frHotspotsData = {'time': datetime.today()}
+hotspotsData = {'time': datetime.today()}
 
 
 def getHotspotByName(name) :
@@ -47,21 +45,22 @@ def getLastDayRewards(address) :
 
 
 def displayResults() :
-    print('Time : ' + str(frHotspotsData['time']))
+    print('Time : ' + str(hotspotsData['time']))
     print()
     for i in range(50) :
-        if str(i) in frHotspotsData :
+        if str(i) in hotspotsData :
             print('Number of Witnesses : {} | Number of hotspots : {} | Average HNT rewards (1 month) : {} | Average HNT rewards (1 day) : {} | Median HNT rewards (1 month) : {} | Median HNT rewards (1 day) : {}'  \
-            .format(i, len(frHotspotsData[str(i)]['totalLastMonthRewards']), \
-            mean(frHotspotsData[str(i)]['totalLastMonthRewards']), mean(frHotspotsData[str(i)]['totalLastDayRewards']), \
-            median(frHotspotsData[str(i)]['totalLastMonthRewards']), median(frHotspotsData[str(i)]['totalLastDayRewards'])))
+            .format(i, len(hotspotsData[str(i)]['totalLastMonthRewards']), \
+            mean(hotspotsData[str(i)]['totalLastMonthRewards']), mean(hotspotsData[str(i)]['totalLastDayRewards']), \
+            median(hotspotsData[str(i)]['totalLastMonthRewards']), median(hotspotsData[str(i)]['totalLastDayRewards'])))
 
 
 def getResultsJson(filename) :
-    with open(filename, 'r') as file :
-        try :
+    try :
+        with open(filename, 'r') as file :
             json_results = json.loads(file.read())
-        except :
+    except :
+        with open(filename, 'w') as file :
             json_results = json.loads('{"data": []}')
     return json_results
 
@@ -70,30 +69,33 @@ def saveResultsJson(filename) :
     results = getResultsJson(filename)
     str_data = '{{"time": "{}", '.format(str(datetime.today()))
     for i in range(50) :
-        if str(i) in frHotspotsData :
-            str_data += '"{}": {{"nb_hotspot": {}, "avg_month": {}, "avg_day": {}, "median_month": {}, "median_day": {}}}'.format(i, len(frHotspotsData[str(i)]['totalLastMonthRewards']), \
-            mean(frHotspotsData[str(i)]['totalLastMonthRewards']), mean(frHotspotsData[str(i)]['totalLastDayRewards']), \
-            median(frHotspotsData[str(i)]['totalLastMonthRewards']), median(frHotspotsData[str(i)]['totalLastDayRewards']))
+        if str(i) in hotspotsData :
+            str_data += '"{}": {{"nb_hotspot": {}, "avg_month": {}, "avg_day": {}, "median_month": {}, "median_day": {}}}'.format(i, len(hotspotsData[str(i)]['totalLastMonthRewards']), \
+            mean(hotspotsData[str(i)]['totalLastMonthRewards']), mean(hotspotsData[str(i)]['totalLastDayRewards']), \
+            median(hotspotsData[str(i)]['totalLastMonthRewards']), median(hotspotsData[str(i)]['totalLastDayRewards']))
             str_data += ','
     str_data = str_data[:len(str_data)-1]
     str_data += '}'
+    print(str_data)
     results['data'].append(json.loads(str_data))
     with open(filename, 'w') as file :
         json.dump(results, file, indent=2)
 
 
 if __name__ == '__main__' :
-    if len(sys.argv) < 2 :
-        print('ERROR: Missing output file path')
+    if len(sys.argv) < 3 :
+        print('ERROR: usage [output filename] [country id]')
         exit()
     output_path = sys.argv[1]
+    country_id = sys.argv[2]
 
+    hotspotsNames_URL = 'https://api.sitebot.com/api/v1/helium/hotspot-list.json?key=101687ce89a25521643d34b2ee3bb71e&country={}'.format(country_id)
     response = requests.get(hotspotsNames_URL)
 
     if response.status_code == 200 :
-        frHotspotsNames = response.json()['list']
+        hotspotsNames = response.json()['list']
 
-        for hotspotName in frHotspotsNames :
+        for hotspotName in hotspotsNames :
             name = hotspotName['name']
             print(name)
             hotspotInfo = getHotspotByName(name)
@@ -108,11 +110,11 @@ if __name__ == '__main__' :
                     lastMonthRewards = getLastMonthRewards(address)
                     lastDayRewards = getLastDayRewards(address)
                     if lastMonthRewards is not None and lastDayRewards is not None:
-                        if str(numberOfWitnesses) in frHotspotsData :
-                            frHotspotsData[str(numberOfWitnesses)]['totalLastMonthRewards'].append(lastMonthRewards)
-                            frHotspotsData[str(numberOfWitnesses)]['totalLastDayRewards'].append(lastDayRewards)
+                        if str(numberOfWitnesses) in hotspotsData :
+                            hotspotsData[str(numberOfWitnesses)]['totalLastMonthRewards'].append(lastMonthRewards)
+                            hotspotsData[str(numberOfWitnesses)]['totalLastDayRewards'].append(lastDayRewards)
                         else :
-                            frHotspotsData[str(numberOfWitnesses)] = {'totalLastMonthRewards': [lastMonthRewards], 'totalLastDayRewards': [lastDayRewards]}
+                            hotspotsData[str(numberOfWitnesses)] = {'totalLastMonthRewards': [lastMonthRewards], 'totalLastDayRewards': [lastDayRewards]}
                 print('done')
         #displayResults()
         saveResultsJson(output_path)
