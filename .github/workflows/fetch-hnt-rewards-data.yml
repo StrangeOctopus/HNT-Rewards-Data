@@ -22,7 +22,8 @@ jobs:
         pip install requests
     - name: run
       run: |
-        python3 fetch_rewards_data.py output/results_FR.json 
+        python3 fetch_rewards_data.py output/results_FR.json FR
+        python3 fetch_rewards_data.py output/results_GB.json GB
         
     - name: Commit files
       run: |
